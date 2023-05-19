@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Memory Game</title>
+    <link rel="icon" type="image/x-icon" href="/back.webp">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Import Stylesheets -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.cdnfonts.com/css/pokemon-solid"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <hr>
+    <h1
+      style="
+        text-align: center;
+        font-family: 'Pokemon Solid';
+        color: #ffde00;
+        -webkit-text-stroke-width: 3.5px;
+        -webkit-text-stroke-color: #3b4cca;
+      "
+    >
+      Pokémon Memory Game
+    </h1>
+
+    <div>
+      <img id="img-dark" class="img-back" src="/dark.webp" alt="Dark Mode" />
+      <img id="img-light" class="img-back" src="/light.png" alt="Light Mode" />
+    </div>
+
+    <div class="console">
+      <div class="form-group m-3 justify-content-center difficulty-level">
+        <select class="form-control" id="difficulty">
+          <option value="">Select Difficulty</option>
+          <option value="easy">Easy</option>
+          <option value="normal">Normal</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+    
+      <section id="info" class="dashboard" style="display: none">
+        <p>Total Number of Pairs: <span id="total">3</span></p>
+        <p>Matched: <span id="matches"></span></p>
+        <p>Pairs Left: <span id="left"></span></p>
+        <p>Number of Clicks: <span id="clicks"></span></p>
+        <p>Number of Moves: <span id="moves"></span></p>
+        <p>
+          You got <span id="time" style="color: rgb(218, 0, 0)"></span> seconds
+          remaining.
+        </p>
+        <button id="powerUp" class="btn btn-success m-2">Power Up</button>
+      </section>
+
+      <button class="btn btn-secondary m-1" id="reset">Reset</button>
+      <button class="btn btn-secondary m-1" id="start">Start</button>
+    </div>
+
+    <div id="gameGrid"></div>
+
+    <div class="modal" style="display: none">
+      <div class="modal-inner">
+        <h3>Well done!</h3>
+        <p class="modal-text">
+          You solved it in
+          <span id="final-time" style="color: rgb(218, 0, 0)"></span> seconds
+          with
+          <span id="final-moves" style="color: rgb(218, 0, 0)"></span> moves
+        </p>
+        <a href="./index.html" id="replay"> Play Again!</a>
+      </div>
+    </div>
+
+    <div class="modal-timeout" style="display: none">
+      <div class="modal-inner">
+        <h3>Out of Time!</h3>
+        <p class="modal-text">Better luck next time!</p>
+        <a href="./index.html" id="replay"> Try Again!</a>
+      </div>
+    </div>
+
+    <div class="theme-switch-wrapper">
+      <p style="margin-right: 10px; margin-bottom: 10px">Light Mode</p>
+      <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+      </label>
+      <p style="margin-left: 10px; margin-bottom: 10px; color: white">
+        Dark Mode
+      </p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
