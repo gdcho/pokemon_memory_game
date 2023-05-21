@@ -1,7 +1,12 @@
-body,
-html {
+body {
   margin: 0;
   padding: 0;
+  font-family: "Pokemon Fire Red";
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 h1 {
@@ -22,14 +27,40 @@ h1 {
   place-items: center;
 }
 
-.console {
-  font-weight: bold;
+.options {
+  display: flex;
+  font-size: 30px;
   text-align: center;
   margin: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  justify-content: center; 
+  align-items: center; 
 }
 
+.start-button {
+  background-color: #008CBA; /* Blue color */
+  color: white; /* White text color */
+}
+
+.start-button:hover {
+  background-color: #006994; /* Darker blue color on mouse-over */
+}
+
+.reset-button {
+  background-color: #f44336; /* Red color */
+  color: white; /* White text color */
+}
+
+.reset-button:hover {
+  background-color: #da190b; /* Darker red color on mouse-over */
+}
+
+
+
 .dashboard {
-  font-size: 16px;
+  font-size: 30px;
   width: fit-content;
   background-color: rgba(128, 128, 128, 0);
   border: 1px solid black;
@@ -55,6 +86,7 @@ h1 {
 
 #game_grid a {
   font-size: 30pt;
+  padding-bottom: 20px;
 }
 
 .img-back{
@@ -75,7 +107,6 @@ h1 {
   transform-style: preserve-3d;
 }
 
-
 img {
   width: 100%;
   border-style: none;
@@ -95,8 +126,7 @@ img {
   transform: rotateY(180deg);
 }
 
-/* Modal CSS */
-.modal {
+.dialog {
   display: block;
   position: fixed;
   top: 0;
@@ -108,7 +138,7 @@ img {
   background: rgba(0, 0, 0, 0.4);
 }
 
-.modal-inner {
+.dialog-inner {
   background: #f7f7f7;
   text-align: center;
   margin: 0 auto;
@@ -118,7 +148,7 @@ img {
   border-radius: 20px;
 }
 
-.modal-timeout {
+.dialog-timeout {
   display: block;
   position: fixed;
   top: 0;
@@ -132,10 +162,6 @@ img {
 
 /* Dark/Light mode toggle */
 .theme-switch-wrapper {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: center;

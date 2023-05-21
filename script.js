@@ -30,7 +30,8 @@ const setup = () => {
 
   $("#reset").click(function () {
     location.reload();
-  });
+    $("#difficulty").val("");
+});
 
   var darkModeText = $(".theme-switch-wrapper p").last();
   var lightModeText = $(".theme-switch-wrapper p").first();
@@ -67,11 +68,13 @@ const setup = () => {
 
   $("#difficulty").change(function () {
     difficulty = $(this).val();
+    // Save difficulty to localStorage
+    localStorage.setItem("selectedDifficulty", difficulty);
     if (difficulty) {
-      $("#start").show();
-      $("#reset").show();
+        $("#start").show();
+        $("#reset").show();
     }
-  });
+});
 
   function startGame() {
     $("#start").css("display", "none");
@@ -129,7 +132,7 @@ const setup = () => {
 
       if (timer === 0) {
         clearInterval(timerInterval);
-        $(".modal-timeout").show();
+        $(".dialog-timeout").show();
         return;
       }
     }, 1000);
@@ -149,7 +152,6 @@ const setup = () => {
       });
 
       $("#gameGrid").on("click", ".pokeCard", function () {
-        // Check for corner cases: if the card is already flipped, matched, or two cards are already flipped.
         if (
           $(this).hasClass("flip") ||
           $(this).hasClass("matched") ||
@@ -210,7 +212,7 @@ const setup = () => {
           setTimeout(() => {
             $finalMoves.text(moves);
             $finalTime.text(finalTime);
-            $(".modal").show();
+            $(".dialog").show();
             clearInterval(timerInterval);
           }, 1000);
         }
@@ -222,4 +224,12 @@ const setup = () => {
   });
 };
 
-$(document).ready(setup);
+$(document).ready(function () {
+  var storedDifficulty = localStorage.getItem("selectedDifficulty");
+
+  if (storedDifficulty) {
+      $("#difficulty").val("");
+  }
+
+  setup();
+});

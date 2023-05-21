@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokémon Memory Game</title>
-    <link rel="icon" type="image/x-icon" href="/back.webp">
+    <link rel="icon" type="image/x-icon" href="/back.webp" />
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -17,16 +17,21 @@
     />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- Import Stylesheets -->
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.cdnfonts.com/css/pokemon-solid"
       rel="stylesheet"
     />
+    <link
+      href="//db.onlinewebfonts.com/c/1c1b3fdb31c3460a94aa5f52255b0388?family=Pokemon+Fire+Red"
+      rel="stylesheet"
+      type="text/css"
+    />
   </head>
 
   <body>
-    <hr>
+    <hr />
     <h1
       style="
         text-align: center;
@@ -44,16 +49,27 @@
       <img id="img-light" class="img-back" src="/light.png" alt="Light Mode" />
     </div>
 
-    <div class="console">
+    <div class="theme-switch-wrapper">
+      <p style="margin-right: 10px; margin-bottom: 10px">Light Mode</p>
+      <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+      </label>
+      <p style="margin-left: 10px; margin-bottom: 10px; color: white">
+        Dark Mode
+      </p>
+    </div>
+
+    <div class="options">
       <div class="form-group m-3 justify-content-center difficulty-level">
-        <select class="form-control" id="difficulty">
+        <select class="form-control" id="difficulty" style="font-size:25px;">
           <option value="">Select Difficulty</option>
           <option value="easy">Easy</option>
           <option value="normal">Normal</option>
           <option value="hard">Hard</option>
         </select>
       </div>
-    
+
       <section id="info" class="dashboard" style="display: none">
         <p>Total Number of Pairs: <span id="total">3</span></p>
         <p>Matched: <span id="matches"></span></p>
@@ -64,19 +80,19 @@
           You got <span id="time" style="color: rgb(218, 0, 0)"></span> seconds
           remaining.
         </p>
-        <button id="powerUp" class="btn btn-success m-2">Power Up</button>
+        <button id="powerUp" class="btn btn-success m-2" style="font-size:20px;">Power Up</button>
       </section>
 
-      <button class="btn btn-secondary m-1" id="reset">Reset</button>
-      <button class="btn btn-secondary m-1" id="start">Start</button>
+      <button class="btn btn-secondary m-2 start-button" id="start" style="font-size:25px;">Start</button>
+      <button class="btn btn-secondary m-2 reset-button" id="reset" style="font-size:25px;">Reset</button>
     </div>
 
     <div id="gameGrid"></div>
 
-    <div class="modal" style="display: none">
-      <div class="modal-inner">
-        <h3>Well done!</h3>
-        <p class="modal-text">
+    <div class="dialog" style="display: none">
+      <div class="dialog-inner">
+        <h3>Good job!</h3>
+        <p class="dialog-text">
           You solved it in
           <span id="final-time" style="color: rgb(218, 0, 0)"></span> seconds
           with
@@ -86,23 +102,12 @@
       </div>
     </div>
 
-    <div class="modal-timeout" style="display: none">
-      <div class="modal-inner">
+    <div class="dialog-timeout" style="display: none">
+      <div class="dialog-inner">
         <h3>Out of Time!</h3>
-        <p class="modal-text">Better luck next time!</p>
-        <a href="./index.html" id="replay"> Try Again!</a>
+        <p class="dialog-text">You gotta try better than that!</p>
+        <a href="./index.html" id="replay"> Play Again!</a>
       </div>
-    </div>
-
-    <div class="theme-switch-wrapper">
-      <p style="margin-right: 10px; margin-bottom: 10px">Light Mode</p>
-      <label class="theme-switch" for="checkbox">
-        <input type="checkbox" id="checkbox" />
-        <div class="slider round"></div>
-      </label>
-      <p style="margin-left: 10px; margin-bottom: 10px; color: white">
-        Dark Mode
-      </p>
     </div>
 
     <script src="script.js"></script>
