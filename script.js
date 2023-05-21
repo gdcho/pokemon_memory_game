@@ -31,7 +31,7 @@ const setup = () => {
   $("#reset").click(function () {
     location.reload();
     $("#difficulty").val("");
-});
+  });
 
   var darkModeText = $(".theme-switch-wrapper p").last();
   var lightModeText = $(".theme-switch-wrapper p").first();
@@ -68,13 +68,12 @@ const setup = () => {
 
   $("#difficulty").change(function () {
     difficulty = $(this).val();
-    // Save difficulty to localStorage
     localStorage.setItem("selectedDifficulty", difficulty);
     if (difficulty) {
-        $("#start").show();
-        $("#reset").show();
+      $("#start").show();
+      $("#reset").show();
     }
-});
+  });
 
   function startGame() {
     $("#start").css("display", "none");
@@ -99,13 +98,13 @@ const setup = () => {
         break;
       case "normal":
         totalPairs = 6;
-        timer = 120;
+        timer = 60;
         $("#gameGrid").css("width", "400px");
         $("#gameGrid").css("height", "300px");
         break;
       default:
         totalPairs = 12;
-        timer = 180;
+        timer = 120;
         $("#gameGrid").css("width", "600px");
         $("#gameGrid").css("height", "400px");
     }
@@ -228,8 +227,10 @@ $(document).ready(function () {
   var storedDifficulty = localStorage.getItem("selectedDifficulty");
 
   if (storedDifficulty) {
-      $("#difficulty").val("");
+    $("#difficulty").val("");
   }
+
+  $("#checkbox").prop("checked", false);
 
   setup();
 });

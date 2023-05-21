@@ -62,7 +62,7 @@
 
     <div class="options">
       <div class="form-group m-3 justify-content-center difficulty-level">
-        <select class="form-control" id="difficulty" style="font-size:25px;">
+        <select class="form-control" id="difficulty" style="font-size: 25px">
           <option value="">Select Difficulty</option>
           <option value="easy">Easy</option>
           <option value="normal">Normal</option>
@@ -72,41 +72,58 @@
 
       <section id="info" class="dashboard" style="display: none">
         <p>Total Number of Pairs: <span id="total">3</span></p>
-        <p>Matched: <span id="matches"></span></p>
-        <p>Pairs Left: <span id="left"></span></p>
         <p>Number of Clicks: <span id="clicks"></span></p>
+        <p>Pairs Left: <span id="left"></span></p>
+        <p>Matched: <span id="matches"></span></p>
         <p>Number of Moves: <span id="moves"></span></p>
         <p>
-          You got <span id="time" style="color: rgb(218, 0, 0)"></span> seconds
-          remaining.
+          Solve in <span id="time" style="color: rgb(218, 0, 0)"></span> seconds
         </p>
-        <button id="powerUp" class="btn btn-success m-2" style="font-size:20px;">Power Up</button>
+        <button
+          id="powerUp"
+          class="btn btn-success m-2"
+          style="font-size: 20px"
+        >
+          Power Up
+        </button>
       </section>
 
-      <button class="btn btn-secondary m-2 start-button" id="start" style="font-size:25px;">Start</button>
-      <button class="btn btn-secondary m-2 reset-button" id="reset" style="font-size:25px;">Reset</button>
+      <button
+        class="btn btn-secondary m-2 start-button"
+        id="start"
+        style="font-size: 25px"
+      >
+        Start
+      </button>
+      <button
+        class="btn btn-secondary m-2 reset-button"
+        id="reset"
+        style="font-size: 25px"
+      >
+        Reset
+      </button>
     </div>
 
     <div id="gameGrid"></div>
 
     <div class="dialog" style="display: none">
       <div class="dialog-inner">
-        <h3>Good job!</h3>
+        <p>Good job!</p>
         <p class="dialog-text">
           You solved it in
           <span id="final-time" style="color: rgb(218, 0, 0)"></span> seconds
           with
           <span id="final-moves" style="color: rgb(218, 0, 0)"></span> moves
         </p>
-        <a href="./index.html" id="replay"> Play Again!</a>
+        <a href="./index.html" id="replay"> Play Again</a>
       </div>
     </div>
 
     <div class="dialog-timeout" style="display: none">
       <div class="dialog-inner">
-        <h3>Out of Time!</h3>
-        <p class="dialog-text">You gotta try better than that!</p>
-        <a href="./index.html" id="replay"> Play Again!</a>
+        <p>Out of Time!</p>
+        <p class="dialog-text">You gotta try better than that</p>
+        <a href="./index.html" id="replay"> Play Again</a>
       </div>
     </div>
 
