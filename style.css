@@ -1,3 +1,12 @@
+@font-face {font-family: "Pokemon Fire Red";
+  src: url("http://db.onlinewebfonts.com/t/1c1b3fdb31c3460a94aa5f52255b0388.eot"); /* IE9*/
+  src: url("http://db.onlinewebfonts.com/t/1c1b3fdb31c3460a94aa5f52255b0388.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("http://db.onlinewebfonts.com/t/1c1b3fdb31c3460a94aa5f52255b0388.woff2") format("woff2"), /* chrome firefox */
+  url("http://db.onlinewebfonts.com/t/1c1b3fdb31c3460a94aa5f52255b0388.woff") format("woff"), /* chrome firefox */
+  url("http://db.onlinewebfonts.com/t/1c1b3fdb31c3460a94aa5f52255b0388.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+  url("http://db.onlinewebfonts.com/t/1c1b3fdb31c3460a94aa5f52255b0388.svg#Pokemon Fire Red") format("svg"); /* iOS 4.1- */
+}
+
 body {
   margin: 0;
   padding: 0;
