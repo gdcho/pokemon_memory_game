@@ -10,17 +10,19 @@ async function getRandomPokemon(numPokemonPairs) {
   shuffledPokemon.sort(() => Math.random() - 0.5);
 
   let cardsHtml = "";
-  for (let i = 0; i < shuffledPokemon.length; i++) {
-    const pokemonID = shuffledPokemon[i];
-    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonID}`);
-    const data = await res.json();
+  let fetchPromises = shuffledPokemon.map(pokemonID => fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonID}`));
+  let pokemonData = await Promise.all(fetchPromises);
+  let jsonData = await Promise.all(pokemonData.map(data => data.json()));
+  
+  jsonData.forEach((data, i) => {
     cardsHtml += `
             <div class="pokeCard">
                 <img id="img${i}" class="front_face" src=${data.sprites.other["official-artwork"].front_default} alt="">
                 <img class="back_face" src="back.webp" alt="">
             </div>
         `;
-  }
+  });
+
   $("#gameGrid").append(cardsHtml);
 }
 
