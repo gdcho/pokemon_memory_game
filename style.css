@@ -1,9 +1,9 @@
-@import url(//db.onlinewebfonts.com/c/831e1f4da157d96bc996f8c9f5f1e578?family=Pokemon+GB);
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Pokemon GB";
+  font-family: 'Press Start 2P', cursive;
   font-size: 10px;
   display: flex;
   justify-content: center;
