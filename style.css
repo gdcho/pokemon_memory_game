@@ -1,17 +1,10 @@
-@font-face {font-family: "Pokemon Fire Red";
-  src: url("http://db.onlinewebfonts.com/t/1c1b3fdb31c3460a94aa5f52255b0388.eot"); /* IE9*/
-  src: url("http://db.onlinewebfonts.com/t/1c1b3fdb31c3460a94aa5f52255b0388.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("http://db.onlinewebfonts.com/t/1c1b3fdb31c3460a94aa5f52255b0388.woff2") format("woff2"), /* chrome firefox */
-  url("http://db.onlinewebfonts.com/t/1c1b3fdb31c3460a94aa5f52255b0388.woff") format("woff"), /* chrome firefox */
-  url("http://db.onlinewebfonts.com/t/1c1b3fdb31c3460a94aa5f52255b0388.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
-  url("http://db.onlinewebfonts.com/t/1c1b3fdb31c3460a94aa5f52255b0388.svg#Pokemon Fire Red") format("svg"); /* iOS 4.1- */
-}
+@import url(//db.onlinewebfonts.com/c/831e1f4da157d96bc996f8c9f5f1e578?family=Pokemon+GB);
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Pokemon Fire Red";
-  font-size: 20px;
+  font-family: "Pokemon GB";
+  font-size: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,7 +49,7 @@ h1 {
 
 .options {
   display: flex;
-  font-size: 20px;
+  font-size: 10px;
   text-align: center;
   width: 100%;
   max-width: 600px;
@@ -83,12 +76,13 @@ h1 {
 }
 
 .dashboard {
-  font-size: 20px;
+  font-size: 10px;
   width: 70%;
   background-color: rgba(128, 128, 128, 0);
   border-radius: 10px;
   margin: 0 auto;
   margin-bottom: 30px;
+  padding-top: 10px;
   border: 3px solid #ffcb05;
 }
 
@@ -109,7 +103,7 @@ h1 {
 }
 
 #game_grid a {
-  font-size: 20pt;
+  font-size: 10px;
   padding-bottom: 20px;
 }
 
@@ -170,7 +164,7 @@ img {
   border: 4px solid #000;
   padding: 20px;
   border-radius: 15px;
-  font-size: 20px;
+  font-size: 10px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   max-width: 100%;
   width: 500px;
